@@ -5,6 +5,11 @@
 #pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
 #pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
 
+task cubedetect()
+{
+ if (getColorName(port3)== colorGreen)
+    moveMotor(armMotor, 150, degrees, 50);
+}
 task main()
 {
 
