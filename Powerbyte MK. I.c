@@ -12,5 +12,6 @@ task cubedetect()
 }
 task main()
 {
-
+	forward(1, rotations, 50);
+	startTask(cubedetect);
 }
