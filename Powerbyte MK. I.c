@@ -8,10 +8,14 @@
 task cubedetect()
 {
  if (getColorName(port3)== colorGreen)
+ {
     moveMotor(armMotor, 150, degrees, 50);
+ }
 }
+
 task main()
 {
 	forward(1, rotations, 50);
 	startTask(cubedetect);
+
 }
