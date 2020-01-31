@@ -3,46 +3,40 @@
 #pragma config(Motor,  motor1,          leftMotor,     tmotorVexIQ, openLoop, driveLeft, encoder)
 #pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
 #pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
-
 task gCube()
 {
 	moveMotor(armMotor, 500, degrees, 70);
 }
 
-task main()
-{
-  if(getTouchLEDValue(touchLED) == colorRed)
-  {
-  	startTask(Right);
-  }
-}
-
-task Right()
+task SR()
 {
 	forward(1.6, rotations, 70);
   startTask(gCube);
   forward(2.5, rotations, 70);
   moveMotor(armMotor, -200, degrees, 70);
   backward(1, rotations, 70);
+  turnRight(240, degrees, 70);
 }
 
-task Left()
+task SL()
 {
 	forward(1.6, rotations, 70);
 	startTask(gCube);
 	forward(2.5, rotations, 70);
-	movemotor(armMotor, -200, degrees, 70);
-
+	moveMotor(armMotor, -200, degrees, 70);
 }
+
 task main()
 {
-  if(getTouchLEDValue(touchLED) == colorGreen)
-  {
-  	startTask(Right);
-  }
-  else
-  {
-  	if(getTouchLEDValue(touchLED) == colorRed);
-
+	wait(1, seconds);
+	if(SensorValue[touchLED] == 1)
+	{
+		setTouchLEDColor(touchLED, colorRed);
+		startTask(SL);
+	}
+	else
+	{
+		setTouchLEDColor(touchLED,colorBlue);
+		startTask(SR);
 	}
 }
