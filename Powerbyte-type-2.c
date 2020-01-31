@@ -34,3 +34,15 @@ task Left()
 	movemotor(armMotor, -200, degrees, 70);
 
 }
+task main()
+{
+  if(getTouchLEDValue(touchLED) == colorGreen)
+  {
+  	startTask(Right);
+  }
+  else
+  {
+  	if(getTouchLEDValue(touchLED) == colorRed);
+
+	}
+}
