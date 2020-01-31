@@ -12,7 +12,7 @@ task gCube()
 
 task main()
 {
-	forward(1.6, rotations, 70);
+  forward(1.6, rotations, 70);
   startTask(gCube);
   forward(2.5, rotations, 70);
   moveMotor(armMotor, -200, degrees, 70);
