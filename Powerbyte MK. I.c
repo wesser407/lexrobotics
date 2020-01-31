@@ -4,16 +4,35 @@
 #pragma config(Motor,  motor6,          rightMotor,    tmotorVexIQ, openLoop, reversed, driveRight, encoder)
 #pragma config(Motor,  motor10,         armMotor,      tmotorVexIQ, openLoop, encoder)
 
-task gCube()
+task findCube()
 {
-	moveMotor(armMotor, 500, degrees, 70);
+	if (getcolorname(colorDetector) == colorGreen);
+		startTask(gCube);	
+	else if (getcolorname(colorDetecter) == colorRed);
+		startTask(rCube);
+	else if (getcolorname(colorDetector  == colorBlue);
+		 startTask(bCube);
+	else
+		 forward(-0.5, rotations, 70);
+		 end()
 }
 
+task gCube()
+{
+	starttask(pickUp)
+	forward(2.5, rotations, 70);
+	movemMotor(armMotor, -200, degrees, 70);
+	backward(1, rotations, 70);
+	end
+}
+		 
+task pickUp()
 
+		 
 task main()
 {
   forward(1.6, rotations, 70);
-  startTask(gCube);
+  startTask(findCube);
   forward(2.5, rotations, 70);
   moveMotor(armMotor, -200, degrees, 70);
   backward(1, rotations, 70);
