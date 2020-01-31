@@ -9,6 +9,14 @@ task gCube()
 	moveMotor(armMotor, 500, degrees, 70);
 }
 
+task main()
+{
+  if(getTouchLEDValue(touchLED) == colorRed)
+  {
+  	startTask(Right);
+  }
+}
+
 task Right()
 {
 	forward(1.6, rotations, 70);
@@ -20,6 +28,10 @@ task Right()
 
 task Left()
 {
+	forward(1.6, rotations, 70);
+	startTask(gCube);
+	forward(2.5, rotations, 70);
+	movemotor(armMotor, -200, degrees, 70);
 }
 task main()
 {
@@ -27,4 +39,9 @@ task main()
   {
   	startTask(Right);
   }
+  else
+  {
+  	if(getTouchLEDValue(touchLED) == colorRed);
+
+	}
 }
