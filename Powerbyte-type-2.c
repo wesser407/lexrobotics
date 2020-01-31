@@ -13,7 +13,7 @@ task main()
 {
   if(getTouchLEDValue(touchLED) == colorGreen)
   {
-  	startTask(
+  	startTask(Right);
   }
 }
 
