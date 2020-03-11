@@ -18,16 +18,16 @@ task rClaw()
 
 task main()
 {
-  forward(1.6, rotations, 60);
+  forward(1.3, rotations, 60);
   startTask(gCube);
-  forward(2.5, rotations, 60);
+  forward(2.9, rotations, 50);
   moveMotor(armMotor, -400, degrees, 60);
-  backward(0.5, rotations, 60);
+  backward(0.6, rotations, 60);
   startTask(rClaw);
   turnRight (249, degrees, 60);
-  forward(0.2, rotations, 60);
+  forward(0.4, rotations, 60);
   startTask(oCube);
   forward(0.7, rotations, 60);
-  turnRight(610 , degrees, 60);
-  forward(9.5, rotations, 60);
+  turnRight(613 , degrees, 60);
+  forward(1, rotations, 60);
 }
